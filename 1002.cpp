@@ -42,23 +42,20 @@ int GetNum(char c)
 	cerr<<"error input";
 	return 0;
 }
-int regular(string& s, char z)
+int regular(string& s, char z, char* p)
 {
-	sit it = s.begin();
-	int factor = 1000000;
-	int nResult = 0;
-	int nTemp = 0;
-	for ( ;it != s.end(); ++it)
+	int i = 0, j = 0;
+	int nCount = (int)s.size();
+	for (  ; i < nCount; ++i)
 	{
-		if(z == *it)
+		if(z == s[i])
 			continue;
 
-		nTemp = GetNum(*it);
-		nResult += nTemp * factor;
-		factor /= 10;
+		p[j] = s[i];
+		++j;
 	}
 
-	return nResult;
+	return atoi(p);
 }
 const int LIMIT = 100000;
 int main()
@@ -76,10 +73,11 @@ int main()
 	mvnit it;
 
 	int nTemp = 0;
+	char szTemp[9] = {'0'}; 
 	for ( ; i < nRow; ++i)
 	{
 		cin>>sOne;
-		nTemp = regular(sOne, '-');
+		nTemp = regular(sOne, '-', szTemp);
 		it = v_n.find( nTemp );
 		if( it != v_n.end() )
 			it->second++;
@@ -89,7 +87,7 @@ int main()
 
 	bool hasDuplicates = false;
 	int nPart1(0), nPart2(0);
-	char szTemp[9] = {'\0'};
+	//char szTemp[9] = {'\0'};
 	for (mvnit it = v_n.begin(); it != v_n.end(); ++it)
 	{
 		if( it->second > 1 ) 
