@@ -1,7 +1,10 @@
 # poj
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| 类别   | 供电距离 |  颜色值  |
+| -------|:--------:| --------:|
+| A      | >3KM     | 待定     |
+| B      | >4KM     | 待定     |
+| C      | >6KM     | 待定     |
+| D      | >6KM     | 待定     |
+| E      | >10KM    | 待定     |
+| F      | >15KM    | 待定     |
